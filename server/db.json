@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "l6cGpJb3",
+      "name": "Henok Tesfaye",
+      "email": "henoktesfaye72@yahoo.com",
+      "phonenumber": "(123) 456-7899",
+      "address": "65  rue de Penthièvre, 139  rue des Nations Unies",
+      "zipcode": "22200",
+      "picture": "Screen Shot 2019-10-17 at 10.15.57 PM.png",
+      "document": "unit_6_industrial_robotics.pdf"
+    }
+  ]
+}
