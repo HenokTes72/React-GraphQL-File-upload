@@ -14,22 +14,14 @@ const MyUpload = ({ onPictureChange }) => {
 
     return false;
   };
-  // const onChange = ({
-  //   target: {
-  //     files: [file]
-  //   }
-  // }) => {
-  //   onPictureChange("picture", file);
-  // };
 
   return (
     <Wrapper>
       <Upload accept="image/*" beforeUpload={handleUpload}>
         <Button>
-          <FormIcon type="upload" /> Upload Photo
+          <FormIcon type="upload" /> Upload Picture
         </Button>
       </Upload>
-      {/* <input type="file" required onChange={onChange} /> */}
     </Wrapper>
   );
 };

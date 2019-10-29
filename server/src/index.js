@@ -45,11 +45,6 @@ const storeUpload = async (upload, id) => {
       .on("finish", resolve);
   });
 
-  // Record the file metadata in the DB.
-  db.get("uploads")
-    .push(file)
-    .write();
-
   return file;
 };
 

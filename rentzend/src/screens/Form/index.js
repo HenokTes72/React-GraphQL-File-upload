@@ -1,11 +1,11 @@
 import React from "react";
-import { Button } from "antd";
+import { Button, message } from "antd";
 import { Formik, Form } from "formik";
 import styled from "styled-components";
 import { useMutation } from "@apollo/react-hooks";
 import PropTypes from "prop-types";
 
-import ApplyJobSchema from "validation_schemas/ApplyJobSchema";
+import ApplyJobSchema from "validation_schemas/form";
 import { CREATE_USER_MUTATION } from "graphql_schemas";
 
 import {
@@ -61,17 +61,23 @@ const MyForm = ({ setUserCreated }) => {
 
     console.log(data);
 
-    const {
-      data: {
-        createUser: { id }
-      }
-    } = await createUser({ variables: data });
+    try {
+      const {
+        data: {
+          createUser: { id }
+        }
+      } = await createUser({ variables: data });
 
-    setUserCreated(true);
+      message.success("Form uploaded successefully");
+      setUserCreated(true);
 
-    resetFields(setFieldValue);
+      resetFields(setFieldValue);
 
-    console.log("id: ", id);
+      console.log("id: ", id);
+    } catch (e) {
+      message.error("Select a file for upload");
+      console.log("ERR: ", e.message);
+    }
   };
 
   const initialValues = {

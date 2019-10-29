@@ -5,29 +5,33 @@ import { Flex, P } from "components";
 import { domain } from "utils/config";
 
 const StyledP = styled(P)`
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 `;
 
 const Wrapper = styled(Flex)`
-  max-width: 500px;
-  height: 120px;
+  max-width: 450px;
+  height: 150px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
   padding-right: 10px;
 `;
 
 const Image = styled.img`
-  height: 120px;
-  width: 150px;
+  height: 100%;
+  width: 200px;
+  margin-right: 30px;
+  border
 `;
 
-const UserProfile = styled(Flex)``;
+const UserProfile = styled(Flex)`
+  max-width: 200px;
+`;
 
 const User = ({ user: { id, name, address, picture, document } }) => {
   const serverPath = `${domain}/${id}`;
 
   return (
-    <Wrapper justifyContent="space-between">
+    <Wrapper>
       <Image src={`${serverPath}-${picture}`} alt="logo of the user" />
 
       <UserProfile flexDirection="column" justifyContent="center">
@@ -37,18 +41,18 @@ const User = ({ user: { id, name, address, picture, document } }) => {
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href={`${serverPath}-${document}`}
+            href={`${serverPath}-${picture}`}
           >
-            Get document
+            Picture
           </a>
         </StyledP>
         <StyledP>
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href={`${serverPath}-${picture}`}
+            href={`${serverPath}-${document}`}
           >
-            Get picture
+            Document
           </a>
         </StyledP>
       </UserProfile>

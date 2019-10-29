@@ -16,6 +16,12 @@ const LargeP = styled(P)`
   margin-bottom: 15px;
 `;
 
+const UsersWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-gap: 15px;
+`;
+
 const UserList = ({ userCreated, setUserCreated }) => {
   const { data, loading, error, refetch } = useQuery(GET_USERS);
 
@@ -30,10 +36,12 @@ const UserList = ({ userCreated, setUserCreated }) => {
   return (
     <Wrapper>
       <LargeP>Users</LargeP>
-      {data.users &&
-        data.users.map((user, index) => {
-          return <User key={index} user={user} />;
-        })}
+      <UsersWrapper>
+        {data.users &&
+          data.users.map((user, index) => {
+            return <User key={index} user={user} />;
+          })}
+      </UsersWrapper>
       {data.users.length === 0 && <P>No user records found</P>}
     </Wrapper>
   );

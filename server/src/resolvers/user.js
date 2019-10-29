@@ -15,7 +15,7 @@ const uploadResolver = {
       const { filename: filename1 } = await storeUpload(picture, id);
       const { filename: filename2 } = await storeUpload(document, id);
 
-      const data = {
+      const user = {
         id,
         ...rest,
         picture: filename1,
@@ -23,10 +23,10 @@ const uploadResolver = {
       };
 
       db.get("users")
-        .push(data)
+        .push(user)
         .write();
 
-      return data;
+      return user;
     }
   }
 };
