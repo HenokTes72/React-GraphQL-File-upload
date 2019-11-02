@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "Z5lUHqE8",
+      "name": "Henok Tesfaye",
+      "email": "henoketes72@gmail.com",
+      "phonenumber": "(123) 456-7899",
+      "address": "65  rue de Penthièvre, 139  rue des Nations Unies",
+      "zipcode": "22200",
+      "picture": "Screen Shot 2019-10-31 at 12.56.52 AM.png",
+      "document": "pattern.txt"
+    }
+  ]
+}

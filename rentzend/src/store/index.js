@@ -4,8 +4,6 @@ import { onError } from "apollo-link-error";
 import { ApolloLink } from "apollo-link";
 import { createUploadLink } from "apollo-upload-client";
 
-import { domain } from "utils/config";
-
 const client = new ApolloClient({
   link: ApolloLink.from([
     onError(({ graphQLErrors, networkError }) => {
@@ -18,7 +16,7 @@ const client = new ApolloClient({
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     createUploadLink({
-      uri: `${domain}/graphql`
+      uri: `${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/graphql`
     })
   ]),
   cache: new InMemoryCache()
