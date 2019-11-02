@@ -16,7 +16,7 @@ const client = new ApolloClient({
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     createUploadLink({
-      uri: `${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/graphql`
+      uri: `http://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/graphql`
     })
   ]),
   cache: new InMemoryCache()
